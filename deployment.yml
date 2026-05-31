@@ -1,6 +1,9 @@
 jobs:
   - name: film_revenue_transform
-    schedule: 0 * * * *
+    schedule:
+      type: integrated
+      integrations:
+        - postgres_rds
     steps:
       - name: run models
         command: dbt run --models film_revenue_performance
