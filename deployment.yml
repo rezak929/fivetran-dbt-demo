@@ -1,8 +1,8 @@
-version: 2
-projects:
-  - name: fivetran_demo
-    dbt-project-path: "/"
-    target-path: "target"
-    environment:
-      - name: DBT_PROFILES_DIR
-        value: "."
+jobs:
+  - name: film_revenue_transform
+    schedule: 0 * * * *
+    steps:
+      - name: run models
+        command: dbt run --models film_revenue_performance
+      - name: test models
+        command: dbt test --models film_revenue_performance
