@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: postgres_rds
+    database: DEMO
+    schema: POSTGRES_RDS_PUBLIC
+    tables:
+      - name: FILM
+      - name: INVENTORY
+      - name: RENTAL
+      - name: PAYMENT
+      - name: CUSTOMER
+      - name: CATEGORY
+      - name: FILM_CATEGORY

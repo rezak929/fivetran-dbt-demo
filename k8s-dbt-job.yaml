@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dbt-run
+  namespace: fivetran
+spec:
+  ttlSecondsAfterFinished: 3600
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: dbt
+          image: rezak939/fivetran-dbt:latest
+          volumeMounts:
+            - name: snowflake-key
+              mountPath: /secrets
+              readOnly: true
+      volumes:
+        - name: snowflake-key
+          secret:
+            secretName: snowflake-private-key
+  backoffLimit: 2

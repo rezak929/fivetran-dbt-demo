@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Secrets - NEVER COMMIT
+*.pem
+*.p8
+*.key
+keys.txt
+
+# Local data dumps
+northwind/
+pagila/
+seeds/
+
+# Local only
+checklist.md
+profiles.yml
