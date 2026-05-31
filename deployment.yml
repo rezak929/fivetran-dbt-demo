@@ -1,0 +1,8 @@
+version: 2
+projects:
+  - name: fivetran_demo
+    dbt-project-path: "/"
+    target-path: "target"
+    environment:
+      - name: DBT_PROFILES_DIR
+        value: "."
