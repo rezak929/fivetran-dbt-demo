@@ -21,3 +21,4 @@ seeds/
 # Local only
 checklist.md
 profiles.yml
+.vscode/settings.json
